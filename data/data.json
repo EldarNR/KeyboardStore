@@ -1,0 +1,84 @@
+[
+    {
+      "id": 1,
+      "name": "Клавиатура со стандартным набором символов",
+      "format": "QWERTY",
+      "color": "black",
+      "price": 1000,
+      "manufacturer": "Logitech",
+      "photo": "https://example.com/images/keyboards/standard.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Мембранная клавиатура",
+      "format": "QWERTY",
+      "color": "white",
+      "price": 500,
+      "manufacturer": "Asus",
+      "photo": "https://example.com/images/keyboards/membrane.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Механическая клавиатура",
+      "format": "ANSI",
+      "color": "black",
+      "price": 2000,
+      "manufacturer": "Cherry",
+      "photo": "https://example.com/images/keyboards/mechanical.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Игровая клавиатура",
+      "format": "QWERTY",
+      "color": "red",
+      "price": 3000,
+      "manufacturer": "Razer",
+      "photo": "https://example.com/images/keyboards/gaming.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Безпроводная клавиатура",
+      "format": "QWERTY",
+      "color": "gray",
+      "price": 4000,
+      "manufacturer": "Apple",
+      "photo": "https://example.com/images/keyboards/wireless.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Клавиатура с подсветкой",
+      "format": "QWERTY",
+      "color": "blue",
+      "price": 5000,
+      "manufacturer": "Corsair",
+      "photo": "https://example.com/images/keyboards/backlit.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Клавиатура с тачпадом",
+      "format": "QWERTY",
+      "color": "silver",
+      "price": 6000,
+      "manufacturer": "Microsoft",
+      "photo": "https://example.com/images/keyboards/touchpad.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Клавиатура с функцией макросов",
+      "format": "QWERTY",
+      "color": "green",
+      "price": 7000,
+      "manufacturer": "SteelSeries",
+      "photo": "https://example.com/images/keyboards/macros.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Клавиатура с подставкой для запястий",
+      "format": "QWERTY",
+      "color": "purple",
+      "price": 8000,
+      "manufacturer": "Logitech",
+      "photo": "https://example.com/images/keyboards/wristrest.jpg"
+    }
+  ]
+  
