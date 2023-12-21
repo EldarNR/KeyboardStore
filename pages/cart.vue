@@ -23,6 +23,7 @@ const removeFormCart = (id) => {
         <div class="cart-items" v-else>
             <div class="cart-item" v-for="item in store.cart" :key="item.id">
                 <div class="item-details bg-blue mb-5 d-flex align-center " style="width: 100%;">
+                {{ item.id }}
                     <img style="height: 100%;" :src="item.thumbnail" alt="img">
                     <h1 class="ml-10">{{ item.title }}</h1>
                     <span>Bran:{{ item.brand }}</span>

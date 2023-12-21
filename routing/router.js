@@ -18,8 +18,12 @@ const router = new VueRouter({
       component: () => import("./pages/cart.vue"),
     },
     {
+      path: "/favourite ",
+      component: () => import("./pages/favourite.vue"),
+    },
+    {
       path: "/products/:id",
-      component: () => import("./pages/products/[id].vue"),
+      component: () => import(`./pages/products/[id].vue`),
     },
   ],
 });
