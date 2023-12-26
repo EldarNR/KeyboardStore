@@ -3,38 +3,21 @@ import { productsStore } from "../data/product.js";
 import { computed, ref } from 'vue';
 import { onMounted } from 'vue';
 
-const searchTerm = ref('');
-
+const searchTerm = ref('')
 const noResultsFound = computed(() => !store.products.length);
-
 const store = productsStore();
 
-let loading = true; // Установить загрузку перед запросом
+
 onMounted(async () => {
     await store.fetchProductsFromDB();
-    loading = false; // Установить загрузку в false после загрузки данных
-
 });
 
-
 const searchProduct = (searchTerm) => {
-    if (searchTerm.length > 0) {
-        store.products = store.products.filter((product) => {
-            return (
-                product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                product.brand.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-        });
-    }
-
-    else {
-        store.products = store.fetchProductsFromDB();
+    if (searchTerm.length > 0 || searchTerm !== " ") {
+        store.fetchProductsFromDB(searchTerm);
     }
 };
 </script>
-
-
 
 <template>
     <v-container>
@@ -54,14 +37,8 @@ const searchProduct = (searchTerm) => {
                         </div>
                     </div>
 
-                    <div v-if="loading">
-                        <div class="loading-message text-center text-h2">
-                            Loading...
-                        </div>
-                    </div>
 
-
-                    <div v-else v-for="product in store.products" :key="product.id" class="product">
+                    <div v-for="product in store.products" :key="product.id" class="product">
                         <product-card :title="product.title" :price="product.price" :description="product.description"
                             :brand="product.brand" :thumbnail="product.thumbnail" :rating="product.rating"
                             :id="product.id" />

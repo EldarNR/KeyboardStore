@@ -13,6 +13,7 @@ defineProps({
 const store = productsStore();
 const addToCart = (id) => {
     const product = store.products.find(product => product.id === id);
+    console.log(product);
     store.addProductToCart(product);
 };
 
@@ -56,10 +57,10 @@ export default {
 
         <v-card-text>
             <v-row align="center" class="mx-0 align-center">
-                <v-rating :model-value="Math.floor(rating)" color="amber" density="compact" half-increments readonly
+                <v-rating :model-value="Math.round(rating)" color="amber" density="compact" half-increments readonly
                     size="small" />
                 <div class="text-grey ms-4">
-                    {{ rating }}
+                    {{ Math.round(rating) }}
                 </div>
             </v-row>
 

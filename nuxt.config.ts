@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
+    '@formkit/auto-animate/nuxt',
     '@pinia/nuxt',
     //...
   ],

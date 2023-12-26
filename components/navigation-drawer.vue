@@ -32,8 +32,9 @@ const postRatin = (event) => {
 </script>
 
 <template>
-    <v-navigation-drawer v-model="drawer" temporary>
+    <v-navigation-drawer class="text-center" v-model="drawer" temporary>
         <v-divider></v-divider>
+
         <v-list density="compact" nav>
             <v-list-item>
                 <v-radio-group label="Цена по" inline>
@@ -44,7 +45,7 @@ const postRatin = (event) => {
             </v-list-item>
 
             <v-list-item title="Фильтрация по цене">
-                <v-slider class="mt-5" @mouseup="postNum(value)" v-model="value" :min="0" :max="2000" :step="1"
+                <v-slider class="mt-2" @mouseup="postNum(value)" v-model="value" :min="0" :max="2000" :step="1"
                     thumb-label></v-slider>
 
                 <p>Цена ниже: ${{ value }}</p>
@@ -52,7 +53,7 @@ const postRatin = (event) => {
             </v-list-item>
 
             <v-list-item title="Поиск по бренду">
-                <ul class="text-center overflow-auto" style="height: 150px;">
+                <ul class="overflow-auto" style="height: 150px;">
                     <li class="chose" @click="store.products = store.fetchProductsFromDB();">All</li>
                     <li class="chose" v-for="brand in cachedUniqueBrands" :key="brand" @click="app(brand)">{{ brand }}</li>
                 </ul>
@@ -62,6 +63,19 @@ const postRatin = (event) => {
                 <v-rating @click="postRatin(rating)" color="yellow-darken-4" :value="rating" v-model="rating"></v-rating>
             </v-list-item>
         </v-list>
+
+        <v-list-item class="mt-5" title="Поиск по Категории">
+            <ul class="overflow-auto" style="height: 200px;">
+                <li class="chose " @click="store.fetchProductsFromDB()">
+                    <h3>All</h3>
+                </li>
+                <li class="chose " v-for="categories in store.categories" @click="store.getCategorieProduct(categories)"
+                    :key="categories.id">
+                    {{ categories }}
+                </li>
+            </ul>
+        </v-list-item>
+
     </v-navigation-drawer>
 
     <v-btn class="ml-5 pa-5 d-flex justify-center" style="min-height:50px;" color="primary" @click.stop="drawer = !drawer">

@@ -15,14 +15,14 @@ let check = ref(false); // initialize based on store
 
 const isFavourite = computed(() => store.favouriteProducts.some(product => product.id === id));
 
-const toggleFavourite = () => {
-    if (isFavourite.value) {
-        store.removeFromFavourite(id);
-    } else {
-        store.addProductToFavourite(store.products.find(product => product.id === id));
-    }
-    check.value = isFavourite.value; // update check based on isFavourite
-};
+//const toggleFavourite = () => {
+//    if (isFavourite.value) {
+//        store.removeFromFavourite(id);
+//    } else {
+//        store.addProductToFavourite(store.products.find(product => product.id === id));
+//    }
+//    check.value = isFavourite.value; // update check based on isFavourite
+//};
 
 </script>
 <template>
@@ -55,8 +55,8 @@ const toggleFavourite = () => {
 .heart-container {
     --heart-color: rgb(255, 91, 137);
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     transition: .3s;
 }
 
